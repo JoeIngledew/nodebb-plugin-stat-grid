@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/JoeIngledew/nodebb-plugin-stat-grid/issues"
   },
-  "homepage": "https://github.com/JoeIngledew/nodebb-plugin-stat-grid#readme"
+  "homepage": "https://github.com/JoeIngledew/nodebb-plugin-stat-grid#readme",
+  "nbbpm": {
+    "compatibility": "^1.10.x"
+  }
 }
