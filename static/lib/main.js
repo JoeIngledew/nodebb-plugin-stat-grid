@@ -19,7 +19,7 @@ $(window).on('action:composer.loaded', function (ev, data) {
       for (var i = 0; i < 6; i++) {
         content += `<tr>`;
         for (var j = 0; j < 6; j++) {
-          content += `<td>${data.composerData.statGrid.results[i][j]}`;
+          content += `<td style="border:1px solid">${data.composerData.statGrid.results[i][j]}</td>`;
         }
         content += `</tr>`;
       }
@@ -33,41 +33,17 @@ $(document).on('click', '[data-format="statgrid"]', function () {
 	$('#statgrid-field').toggle();
 });
 
-// $(window).on('action:composer.submit', function (ev, data) {
-// 	const numberField = data.composerEl.find('#statgrid-field');
-// 	const type = numberField.find('#grid-type select').val();
-// 	const validNumber = function (num, greaterThanZero = true) {
-// 		if (num && num.indexOf(".") == -1 && (greaterThanZero ? num > 0 : num >= 0)) {
-// 			return num;
-// 		}
-// 		return undefined;
-// 	};
-// 	if (type === 'roll-dice') {
-// 		const diceAmount = validNumber(numberField.find('#dice .dice-amount').val()) || numberField.find('#dice .dice-amount').attr('placeholder');
-// 		const diceRequest = diceAmount + numberField.find('#dice .dice-type').val();
-// 		data.composerData.diceRoll = diceRequest;
-// 	}
-// 	if (type === 'random-number') {
-// 		const randomAmount = validNumber(numberField.find('#random .random-amount').val()) || numberField.find('#random .random-amount').attr('placeholder');
-// 		const randomMin = validNumber(numberField.find('#random .random-min').val(), false) || numberField.find('#random .random-min').attr('placeholder');
-// 		const randomMax = validNumber(numberField.find('#random .random-max').val()) || numberField.find('#random .random-max').attr('placeholder');
-// 		data.composerData.randomNumber = [randomAmount, randomMin, randomMax];
-// 	}
-// });
+$(window).on('action:composer.submit', function (ev, data) {
+	const numberField = data.composerEl.find('#statgrid-field');
+	const type = numberField.find('#grid-type select').val();
+	if (type === 'three-grid') {
+		data.composerData.statGrid = "three-grid";
+  } 
+  if (type === 'four-grid') {
+    data.composerData.statGrid = "four-grid";
+  }
+});
 
-// $(document).on('change', '[id="grid-type"]', function (e) {
-// 	const selected = e.target.options[e.target.selectedIndex].value;
-// 	if (selected === 'roll-dice') {
-// 		$('#random').hide();
-// 		$('#dice').show();
-// 	}
-// 	else if (selected === 'random-number') {
-// 		$('#dice').hide();
-// 		$('#random').show();
-// 	}
-// 	else {
-// 		$('#random').hide();
-// 		$('#dice').hide();
-// 	}
-// });
-
+$(document).on('change', '[id="grid-type"]', function (e) {
+	const selected = e.target.options[e.target.selectedIndex].value;
+});
