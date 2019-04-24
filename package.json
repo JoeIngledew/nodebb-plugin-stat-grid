@@ -1,0 +1,19 @@
+{
+  "name": "nodebb-plugin-stat-grid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "library.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoeIngledew/nodebb-plugin-stat-grid.git"
+  },
+  "author": "Joe Ingledew",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoeIngledew/nodebb-plugin-stat-grid/issues"
+  },
+  "homepage": "https://github.com/JoeIngledew/nodebb-plugin-stat-grid#readme"
+}

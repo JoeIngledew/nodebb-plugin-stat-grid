@@ -1,0 +1,45 @@
+{
+  "id": "nodebb-plugin-stat-grid",
+  "url": "https://github.com/JoeIngledew/nodebb-plugin-stat-grid",
+  "library": "./library.js",
+  "staticDirs": {
+    "static": "./static",
+    "img": "./static/img"
+  },
+  "less": [
+    "static/style.less"
+  ],
+  "hooks": [
+    { 
+      "hook": "filter:composer.formatting",
+      "method": "composerFormatting",
+      "priority": 19
+    },
+    {
+      "hook": "filter:parse.post",
+      "method": "parsePost",
+      "priority": 19
+    },
+    {
+      "hook": "filter:topic.create",
+      "method": "generateGrid"
+    },
+    {
+      "hook": "filter:post.create",
+      "method": "generateGrid"
+    },
+    {
+      "hook": "filter:composer.build",
+      "method": "buildComposer",
+      "priority": 99
+    }
+  ],
+  "scripts": [
+    "static/lib/main.js"
+  ],
+  "acpScripts": [
+
+  ],
+  "languages": "",
+  "templates": ""
+}
