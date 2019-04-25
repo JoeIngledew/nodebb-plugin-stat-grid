@@ -1,10 +1,9 @@
 "use strict";
 
-const dieRoll = () => {
-  return Math.floor((Math.random() * 6) + 1);
-}
+const DiceRoll = require('rolldice');
 
 const gg = (type) => {
+  console.log('making a grid of type ' + type);
   let grid = { 
     results: [
       [],
@@ -18,19 +17,16 @@ const gg = (type) => {
   if (type === 'three-grid') {
     for (var i = 0; i < 6; i++) {
       for (var j = 0; j < 6; j++) {
-        let result = dieRoll() + dieRoll() + dieRoll();
+        let dice = new DiceRoll('3d6');
+        let result = dice.expression.result;
         grid[i].push(result);
       }
     }
   } else if (type === "four-grid") {
     for (var i = 0; i < 6; i++) {
       for (var j = 0; j < 6; j++) {
-        let rolls = [];
-        for (var k = 0; k < 4; k++) {
-          rolls.push(dieRoll());
-        }
-        let sorted = rolls.sort((a,b) => b - a);
-        let result = sorted[0] + sorted[1] + sorted[2];
+        let dice = new DiceRoll('4d6d1');
+        let result = dice.expression.result;
         grid[i].push(result);
       }
     } 
@@ -42,7 +38,8 @@ const gf = (grid) => {
   for (var i = 0; i < 6; i++) {
     content += `<tr>`;
     for (var j = 0; j < 6; j++) {
-      content += `<td style="border:1px solid">${grid.results[i][j]}</td>`;
+      let results = !!grid.results ? !!grid.results[i] ? grid.results[i][j] : 0 : 0;
+      content += `<td style="border:1px solid">${results}</td>`;
     }
     content += `</tr>`;
   }

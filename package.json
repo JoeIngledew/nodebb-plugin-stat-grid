@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-stat-grid",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "library.js",
   "scripts": {
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/JoeIngledew/nodebb-plugin-stat-grid#readme",
   "nbbpm": {
     "compatibility": "^1.11.x"
+  },
+  "dependencies": {
+    "rolldice": "3.0.0"
   }
 }

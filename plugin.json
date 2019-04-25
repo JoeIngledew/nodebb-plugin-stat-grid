@@ -3,11 +3,12 @@
   "url": "https://github.com/JoeIngledew/nodebb-plugin-stat-grid",
   "library": "./library.js",
   "staticDirs": {
-    "static": "./static",
-    "img": "./static/img"
+    "js": "./static/lib",
+    "img": "./static/img",
+    "css": "./styles"
   },
   "less": [
-    "static/style.less"
+    "styles/style.less"
   ],
   "hooks": [
     { 
@@ -36,10 +37,5 @@
   ],
   "scripts": [
     "static/lib/main.js"
-  ],
-  "acpScripts": [
-
-  ],
-  "languages": "",
-  "templates": ""
+  ]
 }
