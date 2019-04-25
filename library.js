@@ -36,6 +36,8 @@ const gg = (type) => {
       }
     } 
   }
+
+  return grid;
 }
 
 const gf = (grid) => {
@@ -49,6 +51,7 @@ const gf = (grid) => {
     content += `</tr>`;
   }
   content += '</table></div>';
+  return content;
 }
 
 const composerFormatting = (data, callback) => {
