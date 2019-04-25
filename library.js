@@ -20,7 +20,7 @@ const gg = (type) => {
     for (var i = 0; i < 6; i++) {
       for (var j = 0; j < 6; j++) {
         let result = dieRoll() + dieRoll() + dieRoll();
-        grid[i].push(result);
+        grid.results[i].push(result);
       }
     }
   } else if (type === "four-grid") {
@@ -32,7 +32,7 @@ const gg = (type) => {
         }
         let sorted = rolls.sort((a,b) => b - a);
         let result = sorted[0] + sorted[1] + sorted[2];
-        grid[i].push(result);
+        grid.results[i].push(result);
       }
     } 
   }
