@@ -41,7 +41,7 @@ const gg = (type) => {
 }
 
 const gf = (grid) => {
-  content = `<div class="grid-results"><table>`;
+  let content = `<div class="grid-results"><table>`;
   for (var i = 0; i < 6; i++) {
     content += `<tr>`;
     for (var j = 0; j < 6; j++) {
