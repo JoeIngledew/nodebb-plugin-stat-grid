@@ -19,7 +19,7 @@ $(window).on('action:composer.loaded', function (ev, data) {
       for (var i = 0; i < 6; i++) {
         content += `<tr>`;
         for (var j = 0; j < 6; j++) {
-          content += `<td style="border:1px solid">${data.composerData.statGrid.results[i][j]}</td>`;
+          content += `<td style="border:1px solid; padding:10px">${data.composerData.statGrid.results[i][j]}</td>`;
         }
         content += `</tr>`;
       }

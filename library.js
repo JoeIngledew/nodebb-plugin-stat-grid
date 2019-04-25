@@ -41,16 +41,16 @@ const gg = (type) => {
 }
 
 const gf = (grid) => {
-  let content = `<div class="grid-results"><table>`;
+  let content = `<div class="grid-results"><table><tbody>`;
   for (var i = 0; i < 6; i++) {
     content += `<tr>`;
     for (var j = 0; j < 6; j++) {
       let results = !!grid.results ? !!grid.results[i] ? grid.results[i][j] : 0 : 0;
-      content += `<td style="border:1px solid">${results}</td>`;
+      content += `<td style="border:1px solid; padding:10px">${results}</td>`;
     }
     content += `</tr>`;
   }
-  content += '</table></div>';
+  content += '</tbody></table></div>';
   return content;
 }
 
